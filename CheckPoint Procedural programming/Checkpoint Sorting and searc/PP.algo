@@ -1,0 +1,39 @@
+ALGORITHM PP
+VAR
+    t1,t2,t3 : ARRAY_OF INTEGER[];
+    n,i,ps : INTEGER ; 
+
+
+BEGIN
+
+REPEAT
+write(‘Donner la taille du tableau N≤100’) ;
+read(N)
+UNTIL (N>0 && N≤10)  ;
+
+
+FOR i FROM 0 TO n STEP 1  DO
+read(t1[i]) ;
+END_FOR
+FOR i FROM 0 TO n  STEP 1  DO
+    read(t2[i]) ; 
+END_FOR
+
+
+PS= 0 ; 
+
+FOR i FROM 0 TO max STEP step  DO
+    t3[i] := t1[i] + t2[i] ; 
+    ps:= ps+t1[i] * t2[i] ; 
+END_FOR
+
+
+write(‘Produit Scalaire=’,PS) ;
+write(‘Somme des vecteurs’) ;
+
+FOR i FROM 1 TO n STEP 1  DO
+  write (T3[I]) ;  ;
+
+END_FOR
+
+END

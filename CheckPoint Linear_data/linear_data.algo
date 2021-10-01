@@ -1,0 +1,68 @@
+ALGORITHM test
+VAR
+    sum , n , i,j : INTEGER ; 
+    set_1 ,  set_2 : array_name : ARRAY_OF INTEGER[n]; 
+    test : BOOLEAN ; 
+BEGIN
+REPEAT
+    write ("enter the length of the table");
+    read(n);
+UNTIL (n > 0) ; 
+
+//  S1 P1
+FOR i FROM 0 TO (n- 1)  STEP 1  DO
+    read(set_1[i]) ;
+    read(set_2[i]);
+END_FOR
+
+sum := 0 ;
+ FOR i FROM 0 TO (n-1) STEP 1  DO
+test = false ; 
+     while(set_1[i] <> set_2[j]) do 
+         test = true ;
+        sum = sum + set_1[i] ; 
+    END_FOR
+     IF (test == false) THEN
+         j = j+1 ; 
+     END_IF
+END_FOR 
+
+//S2 P1
+FOR i FROM 0 TO set_1.length -1 STEP 1  DO
+    htab.insert(set_1[i] , 1)
+END_FOR
+FOR i FROM 0 TO set_2.length - 1 STEP step  DO
+     IF (htab.lookup(set2[i]==true)) THEN
+         htab.insert(set_2[i],2)
+     END_IF
+     ELSE 
+     htab.insert(set_2[i,1]) ; 
+FOR i FROM 0 TO set_1.length -1  STEP 1  DO
+    IF (htab.get(set_1[i])-1) THEN
+        sum += set_1[i];
+    END_IF
+END_FOR
+END_FOR
+
+FOR i FROM 0 TO set_2.length-1 STEP 1  DO
+    IF (htab.get(set_2[i]-1)) THEN
+        sum+=set_2[i]
+    END_IF
+END_FOR
+write ("la somme des elements distinct est :" sum) ; 
+
+// P2 
+
+     FOR i FROM 0 TO (n-1) STEP 1  DO
+      j:= 0 ; 
+            WHILE ( set_2[i] <> set_1[j] or j == n  ) DO   
+ 
+      j:= j+1 ; 
+
+                     END_WHILE
+        IF (j == n ) THEN
+            sum = sum + set_2[i] ; 
+        END_IF
+
+     END_FOR
+END

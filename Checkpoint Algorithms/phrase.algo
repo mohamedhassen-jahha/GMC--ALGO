@@ -1,0 +1,39 @@
+ALGORITHM phrase 
+VAR
+     i ,mot,nbr_char ; INTEGER ; 
+     phrase : STRING ; 
+
+BEGIN
+VAR nbr_char   := 0 ; 
+VAR mot        := 0 ; 
+VAR nbr_voyelle := 0 ; 
+
+ i:= phrase[1] ;
+ 
+  WHILE (phrase[i] <> "." ) DO
+    nbr_char:= nbr_char+1 ; 
+    if (phrase[i]== " ") THEN 
+        mot := mot+1 ; 
+        i:=i+1 ;             
+  END_WHILE
+  write(nbr_char) ; 
+  write(mot) ; 
+
+  FOR j FROM 1 TO length(phrase[j])  DO
+    if (phrase[j] in ['a', 'e','i','o','u','y']) THEN
+    nbr_voyelle:= nbr_voyelle + 1 ;
+  END_FOR        
+  write (nbr_voyelle) ; 
+
+FUNCTION nb_voyelle(phrase: STRING) : INTEGER;
+VAR compteur := voyelle[1];
+VAR nbr_voyelle := 0 ; 
+
+BEGIN
+FOR i FROM 1 TO length(phrase[i])  DO
+ if (phrase[i] in ['a', 'e','i','o','u','y']) THEN
+ nbr_voyelle:= nbr_voyelle + 1 ; 
+END_FOR     
+
+RETURN nbr_voyelle ;
+END
